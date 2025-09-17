@@ -114,3 +114,4 @@ When creating this spec from a user prompt:
 - [ ] Review checklist passed
 
 ---
+*Based on Constitution v1.0.0 - See `/memory/constitution.md`*
