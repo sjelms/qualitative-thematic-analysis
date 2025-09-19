@@ -4,17 +4,17 @@
 **Prerequisites**: plan.md, research.md, data-model.md, contracts/
 
 ## Phase 3.1: Setup
-- [ ] T001 Create project structure with `src` and `tests` directories.
-- [ ] T002 Initialize Python project and install dependencies: `pytest`, `openai`, `python-docx`, `PyPDF2`, `markdown`.
-- [ ] T003 [P] Configure linting and formatting tools (e.g., `black`, `ruff`).
+- [X] T001 Create project structure with `src` and `tests` directories.
+- [X] T002 Initialize Python project and install dependencies: `pytest`, `openai`, `python-docx`, `PyPDF2`, `markdown`.
+- [X] T003 [P] Configure linting and formatting tools (e.g., `black`, `ruff`).
 
 ## Phase 3.2: Tests First (TDD) ⚠️ MUST COMPLETE BEFORE 3.3
 **CRITICAL: These tests MUST be written and MUST FAIL before ANY implementation**
-- [ ] T004 [P] Contract test for `qta ingest` in `tests/contract/test_ingest.py`.
-- [ ] T005 [P] Contract test for `qta analyze` in `tests/contract/test_analyze.py`.
-- [ ] T006 [P] Contract test for `qta review` in `tests/contract/test_review.py`.
-- [ ] T007 [P] Contract test for `qta report` in `tests/contract/test_report.py`.
-- [ ] T008 [P] Integration test for the main user workflow in `tests/integration/test_workflow.py`.
+- [X] T004 [P] Contract test for `qta ingest` in `tests/contract/test_ingest.py`.
+- [X] T005 [P] Contract test for `qta analyze` in `tests/contract/test_analyze.py`.
+- [X] T006 [P] Contract test for `qta review` in `tests/contract/test_review.py`.
+- [X] T007 [P] Contract test for `qta report` in `tests/contract/test_report.py`.
+- [X] T008 [P] Integration test for the main user workflow in `tests/integration/test_workflow.py`.
 
 ## Phase 3.3: Core Implementation (ONLY after tests are failing)
 - [ ] T009 [P] Implement data models in `src/models.py`.

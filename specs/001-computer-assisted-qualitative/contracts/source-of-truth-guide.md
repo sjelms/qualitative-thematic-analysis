@@ -78,7 +78,10 @@
 
 ---
 
-## Part B — Working as Learning Framework (WALF): Interpretive Lens
+## Part B — Working as Learning
+Framework (WALF): Interpretive Lens
+
+> For a practical tool and concrete examples of WALF in action, see the **Working as Learning Framework (WALF) Matrix** in `specs/001-computer-assisted-qualitative/contracts/working-as-learning-framework-matrix.md`.
 
 ### B1. Core Constructs
 - **Levels of analysis:**  
