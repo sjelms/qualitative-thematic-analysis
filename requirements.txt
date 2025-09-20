@@ -1,7 +1,0 @@
-pytest
-openai
-python-docx
-PyPDF2
-markdown
-black
-ruff

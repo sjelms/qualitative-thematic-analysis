@@ -1,54 +1,30 @@
-# Tasks: Computer-Assisted Qualitative Data Analysis System
+# Tasks: Computer-Assisted Qualitative Data Analysis System (Jupyter Pivot)
 
-**Input**: Design documents from `/specs/001-computer-assisted-qualitative/`
-**Prerequisites**: plan.md, research.md, data-model.md, contracts/
+**Input**: Updated design documents from `/specs/001-computer-assisted-qualitative/`
+**Prerequisites**: plan.md (v2), constitution.md (v2)
 
-## Phase 3.1: Setup
-- [X] T001 Create project structure with `src` and `tests` directories.
-- [X] T002 Initialize Python project and install dependencies: `pytest`, `openai`, `python-docx`, `PyPDF2`, `markdown`.
-- [X] T003 [P] Configure linting and formatting tools (e.g., `black`, `ruff`).
+## Phase 1: Environment Setup
+- [ ] T001 Create `Dockerfile` for the Jupyter Scientific Python Stack.
+- [ ] T002 Create `docker-compose.yml` to manage the containerized service.
+- [ ] T003 Create a `.dockerignore` file to keep the container image lean.
+- [ ] T004 Create the project directory structure: `notebooks/`, `data/raw`, `data/processed`, `src/`.
 
-## Phase 3.2: Tests First (TDD) ⚠️ MUST COMPLETE BEFORE 3.3
-**CRITICAL: These tests MUST be written and MUST FAIL before ANY implementation**
-- [X] T004 [P] Contract test for `qta ingest` in `tests/contract/test_ingest.py`.
-- [X] T005 [P] Contract test for `qta analyze` in `tests/contract/test_analyze.py`.
-- [X] T006 [P] Contract test for `qta review` in `tests/contract/test_review.py`.
-- [X] T007 [P] Contract test for `qta report` in `tests/contract/test_report.py`.
-- [X] T008 [P] Integration test for the main user workflow in `tests/integration/test_workflow.py`.
+## Phase 2: Initial Notebook Development
+- [ ] T005 Create the initial `analysis.ipynb` notebook in the `notebooks/` directory.
+- [ ] T006 Add sections to the notebook for: Introduction, Setup, Data Ingestion, Analysis, and Reporting.
+- [ ] T007 Implement the initial Python code in the notebook to import necessary libraries.
 
-## Phase 3.3: Core Implementation (ONLY after tests are failing)
-- [ ] T009 [P] Implement data models in `src/models.py`.
-- [ ] T010 Implement `ingest` command logic in `src/cli/ingest.py`.
-- [ ] T011 Implement `analyze` command logic in `src/services/analysis.py`.
-- [ ] T012 Implement `review` command logic in `src/cli/review.py`.
-- [ ] T013 Implement `report` command logic in `src/services/reporting.py`.
-- [ ] T014 Implement main CLI entry point in `src/main.py`.
+## Phase 3: Core Workflow Implementation
+- [ ] T008 Implement data ingestion logic in the notebook to read files from `data/raw`.
+- [ ] T009 Use Pandas to structure the ingested data into a DataFrame.
+- [ ] T010 Implement the core analysis logic, integrating with the OpenAI API to suggest codes and themes.
+- [ ] T011 Implement a review and refinement workflow for the researcher to interact with the suggested analysis.
+- [ ] T012 Implement reporting logic to generate summaries and visualizations (e.g., using Matplotlib/Seaborn).
 
-## Phase 3.4: Integration
-- [ ] T015 Integrate `ingest` command with data models.
-- [ ] T016 Integrate `analyze` command with data models and LLM service.
-- [ ] T017 Integrate `review` command with data models.
-- [ ] T018 Integrate `report` command with data models.
-
-## Phase 3.5: Polish
-- [ ] T019 [P] Unit tests for file parsing in `tests/unit/test_parsing.py`.
-- [ ] T020 [P] Unit tests for reporting logic in `tests/unit/test_reporting.py`.
-- [ ] T021 [P] Update `README.md` with usage instructions.
-
-## Dependencies
-- Tests (T004-T008) before implementation (T009-T014).
-- T009 blocks T015, T016, T017, T018.
-- Implementation before polish (T019-T021).
-
-## Parallel Example
-```
-# Launch T004-T008 together:
-Task: "Contract test for `qta ingest` in `tests/contract/test_ingest.py`"
-Task: "Contract test for `qta analyze` in `tests/contract/test_analyze.py`"
-Task: "Contract test for `qta review` in `tests/contract/test_review.py`"
-Task: "Contract test for `qta report` in `tests/contract/test_report.py`"
-Task: "Integration test for the main user workflow in `tests/integration/test_workflow.py`"
-```
+## Phase 4: Polish & Documentation
+- [ ] T013 Create helper functions in the `src/` directory for any reusable code from the notebook.
+- [ ] T014 Write unit tests for helper functions in `src/`.
+- [ ] T015 Update `README.md` with detailed instructions on how to build and run the Jupyter environment using Docker.
 
 ---
-*Based on Constitution v1.0.0 - See `/memory/constitution.md`*
+*Based on Constitution v2.0.0 - See `/.specify/memory/constitution.md`*

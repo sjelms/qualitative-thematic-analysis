@@ -1,100 +1,68 @@
 # Implementation Plan: Computer-Assisted Qualitative Data Analysis System
 
-**Branch**: `001-computer-assisted-qualitative` | **Date**: 2025-09-17 | **Spec**: [link](./spec.md)
+**Branch**: `feature/002-jupyter-pivot` | **Date**: 2025-09-20 | **Spec**: [link](./spec.md)
 **Input**: Feature specification from `/specs/001-computer-assisted-qualitative/spec.md`
 
 ## Summary
-This plan outlines the implementation of a computer-assisted qualitative data analysis system. The system will assist a single researcher in performing Reflexive Thematic Analysis (TA) guided by the Working as Learning Framework (WALF). The technical approach is a Python-based CLI application that interacts with an LLM API.
+This plan outlines the implementation of a computer-assisted qualitative data analysis system. The system will assist a single researcher in performing Reflexive Thematic Analysis (TA) guided by the Working as Learning Framework (WALF). The technical approach is a **Jupyter Notebook-based workflow running within a Docker container**, leveraging the Jupyter Scientific Python Stack.
 
 ## Technical Context
-**Language/Version**: Python 3.11
-**Primary Dependencies**: `openai`, `python-docx`, `PyPDF2`, `markdown`
-**Storage**: Filesystem (Markdown and JSON files)
-**Testing**: `pytest`
-**Target Platform**: Cross-platform (macOS, Linux, Windows)
-**Project Type**: Single project
-**Performance Goals**: [NEEDS CLARIFICATION: Initial focus is on functionality, not performance.]
-**Constraints**: Neurodiversity-informed design, secure API key storage.
-**Scale/Scope**: Single researcher application.
-
-## Constitution Check
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
-
-No constitution defined. The constitution file is a template.
+**Language/Version**: Python 3.13
+**Core Technologies**: Docker, JupyterLab
+**Primary Dependencies**: `pandas`, `numpy`, `matplotlib`, `seaborn`, `nltk`, `spacy`, `scikit-learn`, `openai`
+**Storage**: Filesystem (mapped between host and container)
+**Testing**: `pytest` (for utility functions)
+**Target Platform**: Any system capable of running Docker.
 
 ## Project Structure
 
-### Documentation (this feature)
+### Documentation
 ```
 specs/001-computer-assisted-qualitative/
-├── plan.md              # This file (/plan command output)
-├── research.md          # Phase 0 output (/plan command)
-├── data-model.md        # Phase 1 output (/plan command)
-├── quickstart.md        # Phase 1 output (/plan command)
-├── contracts/           # Phase 1 output (/plan command)
-│   └── cli-contracts.md
-└── tasks.md             # Phase 2 output (/tasks command - NOT created by /plan)
+├── plan.md              # This file
+├── research.md
+├── data-model.md
+├── quickstart.md
+├── contracts/
+└── tasks.md
 ```
 
-### Source Code (repository root)
+### Source Code (New Structure)
 ```
-# Option 1: Single project (DEFAULT)
-src/
-├── models/
-├── services/
-├── cli/
-└── lib/
-
-tests/
-├── contract/
-├── integration/
-└── unit/
+.
+├── Dockerfile           # Defines the container environment
+├── docker-compose.yml   # For easy container management
+├── .dockerignore        # To exclude files from the container
+├── notebooks/           # Jupyter notebooks for analysis
+│   └── analysis.ipynb
+├── data/                # For raw and processed data
+│   ├── raw/
+│   └── processed/
+└── src/                 # For utility scripts and helper functions
 ```
 
-**Structure Decision**: Option 1: Single project
-
-## Phase 0: Outline & Research
-Research has been conducted to address the open questions from the feature specification. The findings are consolidated in `research.md`.
-
-**Output**: `research.md` with all NEEDS CLARIFICATION resolved.
-
-## Phase 1: Design & Contracts
-The design phase is complete. The data model, CLI contracts, and a quickstart guide have been created.
-
-**Output**: `data-model.md`, `contracts/cli-contracts.md`, `quickstart.md`.
-
-## Phase 2: Task Planning Approach
-*This section describes what the /tasks command will do - DO NOT execute during /plan*
-
-**Task Generation Strategy**:
-- Load `.specify/templates/tasks-template.md` as base.
-- Generate tasks from the design documents (`data-model.md`, `contracts/cli-contracts.md`, `quickstart.md`).
-- Each CLI command in `cli-contracts.md` will have a corresponding task for implementation and testing.
-- Each entity in `data-model.md` will have a task for creating the corresponding Python class.
-- A task will be created to implement the interactive review session.
-
-**Ordering Strategy**:
-- TDD order: Tests before implementation.
-- Dependency order: Models before services before CLI.
-
-**Estimated Output**: 10-15 numbered, ordered tasks in `tasks.md`.
+## Phase 3: Task Planning Approach (New)
+The task plan will be updated to reflect the new architecture. Key tasks will include:
+1.  Creating the Docker environment (`Dockerfile`, `docker-compose.yml`).
+2.  Scaffolding the new directory structure (`notebooks`, `data`).
+3.  Developing the core analysis workflow within the `analysis.ipynb` notebook.
+4.  Creating helper functions in `src` as needed.
 
 ## Progress Tracking
 *This checklist is updated during execution flow*
 
 **Phase Status**:
-- [X] Phase 0: Research complete (/plan command)
-- [X] Phase 1: Design complete (/plan command)
-- [X] Phase 2: Task planning complete (/plan command - describe approach only)
-- [ ] Phase 3: Tasks generated (/tasks command)
-- [ ] Phase 4: Implementation complete
-- [ ] Phase 5: Validation passed
+- [X] Phase 0: Research complete
+- [X] Phase 1: Design complete
+- [ ] Phase 2: Task planning (in progress)
+- [ ] Phase 3: Implementation
+- [ ] Phase 4: Validation
 
 **Gate Status**:
 - [X] Initial Constitution Check: PASS
-- [X] Post-Design Constitution Check: PASS
+- [X] Post-Design Constitution Check: PASS (via pivot)
 - [X] All NEEDS CLARIFICATION resolved
 - [ ] Complexity deviations documented
 
 ---
-*Based on Constitution v2.1.1 - See `/memory/constitution.md`*
+*Based on Constitution v2.0.0 - See `/.specify/memory/constitution.md`*
