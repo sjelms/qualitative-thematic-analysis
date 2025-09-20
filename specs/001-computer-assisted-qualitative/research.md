@@ -23,3 +23,4 @@
 **Rationale**: This ensures that the user can still work with the system even if the LLM is not available. It also aligns with the "human-in-the-loop" principle.
 
 **Alternatives considered**: Preventing the use of the application altogether was rejected as it would make the tool useless in case of API outages.
+m
