@@ -128,8 +128,8 @@ dmypy.json
 *.swp
 *.swo
 *~
+.Trash-*/
 .DS_Store
 Thumbs.db
 
 qta.code-workspace
-

@@ -1,7 +1,9 @@
-pytest
+jupyterlab
+pandas
+numpy
+matplotlib
+seaborn
+nltk
+spacy
+scikit-learn
 openai
-python-docx
-PyPDF2
-markdown
-black
-ruff
