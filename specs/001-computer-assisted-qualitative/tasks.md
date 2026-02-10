@@ -4,10 +4,10 @@
 **Prerequisites**: plan.md (v2), constitution.md (v2)
 
 ## Phase 1: Environment Setup
-- [ ] T001 Create `Dockerfile` for the Jupyter Scientific Python Stack.
-- [ ] T002 Create `docker-compose.yml` to manage the containerized service.
-- [ ] T003 Create a `.dockerignore` file to keep the container image lean.
-- [ ] T004 Create the project directory structure: `notebooks/`, `data/raw`, `data/processed`, `src/`.
+- [x] T001 Create `Dockerfile` for the Jupyter Scientific Python Stack.
+- [x] T002 Create `docker-compose.yml` to manage the containerized service.
+- [x] T003 Create a `.dockerignore` file to keep the container image lean.
+- [x] T004 Create the project directory structure: `notebooks/`, `data/raw`, `data/processed`, `src/`.
 
 ## Phase 2: Initial Notebook Development
 - [ ] T005 Create the initial `analysis.ipynb` notebook in the `notebooks/` directory.
